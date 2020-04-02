@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="Ken">
 <meta property="og:description" content="前言使用 Vue Cli 4 完成電商作業後，當然要繼續學習新東西了。 開始學習 Nuxt 後，發現這個框架有許多特性非常好，以後學習重心應該會從 Vue Cli 轉向 Nuxt 了。 總之，這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。 Nuxt 是什麼? 官方: Nuxt 是一個基於 Vue.js 的通用應用框架。Nuxt 是一個高度封裝的 SSR 應用框">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://imgur.com/sh1Nrjz">
-<meta property="og:image" content="https://imgur.com/LWH3mtl">
-<meta property="og:image" content="https://imgur.com/eAOi65c">
-<meta property="og:image" content="https://imgur.com/XiIG7LY">
+<meta property="og:image" content="https://i.imgur.com/sh1Nrjz.png">
+<meta property="og:image" content="https://i.imgur.com/LWH3mtl.png">
+<meta property="og:image" content="https://i.imgur.com/eAOi65c.png">
+<meta property="og:image" content="https://i.imgur.com/XiIG7LY.png">
 <meta property="article:published_time" content="2020-04-01T11:13:11.000Z">
-<meta property="article:modified_time" content="2020-04-02T07:41:18.914Z">
+<meta property="article:modified_time" content="2020-04-02T07:50:43.622Z">
 <meta property="article:author" content="Ken Chang">
-<meta property="article:tag" content="Nuxt">
+<meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://imgur.com/sh1Nrjz">
+<meta name="twitter:image" content="https://i.imgur.com/sh1Nrjz.png">
 
 <link rel="canonical" href="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
 
@@ -199,8 +199,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-02 15:41:18" itemprop="dateModified" datetime="2020-04-02T15:41:18+08:00">2020-04-02</time>
+                <time title="修改時間：2020-04-02 15:50:43" itemprop="dateModified" datetime="2020-04-02T15:50:43+08:00">2020-04-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NuxtJS/" itemprop="url" rel="index"><span itemprop="name">NuxtJS</span></a>
+                </span>
+            </span>
 
           
 
@@ -228,17 +237,15 @@
 </ul>
 <h3 id="伺服器端渲染"><a href="#伺服器端渲染" class="headerlink" title="伺服器端渲染"></a>伺服器端渲染</h3><p>如果曾經使用過 Vue Cli 開發，就會發現如果對網站按右鍵 -&gt; 檢查網頁原始碼，只會看到一些基本標籤，沒辦法看到網站內容，</p>
 <p>例如查看一個 SPA 網站原始碼:</p>
-<p><img src="https://imgur.com/sh1Nrjz" alt="V-Headphone 電商原始碼"></p>
-<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，</p>
-<p>伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。</p>
-<p>這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
+<p><img src="https://i.imgur.com/sh1Nrjz.png" alt="V-Headphone 電商原始碼"></p>
+<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
 <p>但如果是使用 Nuxt 時:</p>
-<p><img src="https://imgur.com/LWH3mtl" alt="Nuxt init"><br><img src="https://imgur.com/eAOi65c" alt="Nuxt.js 初始建立原始碼"></p>
+<p><img src="https://i.imgur.com/LWH3mtl.png" alt="Nuxt init"><br><img src="https://i.imgur.com/eAOi65c.png" alt="Nuxt.js 初始建立原始碼"></p>
 <p>Nuxt 在使用者一開始進入網頁時，會在後端先將頁面生好，再傳給瀏覽器給使用者，所以打開網頁原始碼是可以看見內容的，這就是 SSR (Server side render) 伺服器端渲染</p>
 <p>並且之後使用者在瀏覽網站時，例如跳轉路由，仍然是 SPA 體驗，意即同時擁有了 SSR 渲染對 SEO 友善的好處，也保留了 SPA 良好的使用者體驗。</p>
 <p>感覺之後可以額外寫一篇關於 前端渲染、後端渲染與前後端分離的文章。</p>
 <h3 id="快速建立路由"><a href="#快速建立路由" class="headerlink" title="快速建立路由"></a>快速建立路由</h3><p>在 Vue Cli 建立路由時需要自己配置(當然建立專案時直接安裝 vue-router，另當別論 XD)，得建立一個 JS 檔案配置好路由後，在 main.js (進入點) 引入它，雖然稱不上麻煩，但我認為 Nuxt 在路由方面做得更直觀，只需要在 pages 資料夾內建立路由名稱資料夾放置要渲染的 .vue 檔即可，例如新增一個 products 資料夾，裡面放入 index.vue</p>
-<p><img src="https://imgur.com/XiIG7LY" alt="Nuxt 路由"></p>
+<p><img src="https://i.imgur.com/XiIG7LY.png" alt="Nuxt 路由"></p>
 <p>這樣簡單的建立資料夾，Nuxt 就會自動配置路由，是不是相當方便呢 !</p>
 <h3 id="方便的-nuxt-config-js-管理"><a href="#方便的-nuxt-config-js-管理" class="headerlink" title="方便的 nuxt.config.js 管理"></a>方便的 nuxt.config.js 管理</h3><p>目前新版腳手架的開發方向，是偏向不讓開發者去設定 webpack 的(React 與 Vue Cli 4 都將 webpack 藏起來惹)。</p>
 <p>而 Nuxt 許多設定都統一在 nuxt.config.js 作管理，例如 HTML 的 <head> 只需要在 meta 中配置即可，而 webpack 在 build 作設定，所有配置都在這一目了然，</p>
@@ -256,7 +263,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Nuxt/" rel="tag"># Nuxt</a>
+              <a href="/tags/NuxtJS/" rel="tag"># NuxtJS</a>
           </div>
 
         
@@ -351,7 +358,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">

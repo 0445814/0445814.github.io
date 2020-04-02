@@ -192,8 +192,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-02 15:41:18" itemprop="dateModified" datetime="2020-04-02T15:41:18+08:00">2020-04-02</time>
+                <time title="修改時間：2020-04-02 15:50:43" itemprop="dateModified" datetime="2020-04-02T15:50:43+08:00">2020-04-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NuxtJS/" itemprop="url" rel="index"><span itemprop="name">NuxtJS</span></a>
+                </span>
+            </span>
 
           
 
@@ -221,17 +230,15 @@
 </ul>
 <h3 id="伺服器端渲染"><a href="#伺服器端渲染" class="headerlink" title="伺服器端渲染"></a>伺服器端渲染</h3><p>如果曾經使用過 Vue Cli 開發，就會發現如果對網站按右鍵 -&gt; 檢查網頁原始碼，只會看到一些基本標籤，沒辦法看到網站內容，</p>
 <p>例如查看一個 SPA 網站原始碼:</p>
-<p><img src="https://imgur.com/sh1Nrjz" alt="V-Headphone 電商原始碼"></p>
-<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，</p>
-<p>伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。</p>
-<p>這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
+<p><img src="https://i.imgur.com/sh1Nrjz.png" alt="V-Headphone 電商原始碼"></p>
+<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
 <p>但如果是使用 Nuxt 時:</p>
-<p><img src="https://imgur.com/LWH3mtl" alt="Nuxt init"><br><img src="https://imgur.com/eAOi65c" alt="Nuxt.js 初始建立原始碼"></p>
+<p><img src="https://i.imgur.com/LWH3mtl.png" alt="Nuxt init"><br><img src="https://i.imgur.com/eAOi65c.png" alt="Nuxt.js 初始建立原始碼"></p>
 <p>Nuxt 在使用者一開始進入網頁時，會在後端先將頁面生好，再傳給瀏覽器給使用者，所以打開網頁原始碼是可以看見內容的，這就是 SSR (Server side render) 伺服器端渲染</p>
 <p>並且之後使用者在瀏覽網站時，例如跳轉路由，仍然是 SPA 體驗，意即同時擁有了 SSR 渲染對 SEO 友善的好處，也保留了 SPA 良好的使用者體驗。</p>
 <p>感覺之後可以額外寫一篇關於 前端渲染、後端渲染與前後端分離的文章。</p>
 <h3 id="快速建立路由"><a href="#快速建立路由" class="headerlink" title="快速建立路由"></a>快速建立路由</h3><p>在 Vue Cli 建立路由時需要自己配置(當然建立專案時直接安裝 vue-router，另當別論 XD)，得建立一個 JS 檔案配置好路由後，在 main.js (進入點) 引入它，雖然稱不上麻煩，但我認為 Nuxt 在路由方面做得更直觀，只需要在 pages 資料夾內建立路由名稱資料夾放置要渲染的 .vue 檔即可，例如新增一個 products 資料夾，裡面放入 index.vue</p>
-<p><img src="https://imgur.com/XiIG7LY" alt="Nuxt 路由"></p>
+<p><img src="https://i.imgur.com/XiIG7LY.png" alt="Nuxt 路由"></p>
 <p>這樣簡單的建立資料夾，Nuxt 就會自動配置路由，是不是相當方便呢 !</p>
 <h3 id="方便的-nuxt-config-js-管理"><a href="#方便的-nuxt-config-js-管理" class="headerlink" title="方便的 nuxt.config.js 管理"></a>方便的 nuxt.config.js 管理</h3><p>目前新版腳手架的開發方向，是偏向不讓開發者去設定 webpack 的(React 與 Vue Cli 4 都將 webpack 藏起來惹)。</p>
 <p>而 Nuxt 許多設定都統一在 nuxt.config.js 作管理，例如 HTML 的 <head> 只需要在 meta 中配置即可，而 webpack 在 build 作設定，所有配置都在這一目了然，</p>
@@ -400,7 +407,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">

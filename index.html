@@ -161,6 +161,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ken Chang">
+      <meta itemprop="description" content="前端學習紀錄">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ken">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-04-08 10:58:43 / 修改時間：12:19:19" itemprop="dateCreated datePublished" datetime="2020-04-08T10:58:43+08:00">2020-04-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NuxtJS/" itemprop="url" rel="index"><span itemprop="name">NuxtJS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="起手式"><a href="#起手式" class="headerlink" title="起手式"></a>起手式</h2><p>如同 Vue-Cli，Nuxt 也提供腳手架工具讓開發者快速建立一個專案。請先確認自己有安裝 Node.js，才能執行下載哦 !</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 終端機輸入</span></span><br><span class="line">npx create-nuxt-app &lt;專案名稱&gt;</span><br></pre></td></tr></table></figure>
+
+<p>npx 命令會在執行後，將套件刪除，這樣就可避免在本地電腦多一些不必要的檔案而污染到全域套件。</p>
+<h2 id="專案設定"><a href="#專案設定" class="headerlink" title="專案設定"></a>專案設定</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 專案名稱，直接 Enter 會用預設</span></span><br><span class="line">? Project name Hello</span><br><span class="line"><span class="meta">#</span><span class="bash"> 專案描述</span></span><br><span class="line">? Project description My stellar Nuxt.js project</span><br><span class="line"><span class="meta">#</span><span class="bash"> 作者名稱</span></span><br><span class="line">? Author name Ken Chang</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 JavaScript 或 TypeScript</span></span><br><span class="line">? Choose programming language JavaScript</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇套件管理工具 npm 或 yarn</span></span><br><span class="line">? Choose the package manager Npm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 UI 框架，通常選 none</span></span><br><span class="line">? Choose UI framework None</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 伺服器框架，通常選 None</span></span><br><span class="line">? Choose custom server framework None (Recommended)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 是否安裝 Axios ?</span></span><br><span class="line">? Choose Nuxt.js modules Axios</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇程式碼規範檢查</span></span><br><span class="line">? Choose linting tools ESLint</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇測試框架</span></span><br><span class="line">? Choose test framework None</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇渲染模式，SSR 或 SPA，用 Nuxt 當然是選 SSR 囉 !</span></span><br><span class="line">? Choose rendering mode Universal (SSR)</span><br></pre></td></tr></table></figure>
+
+<h2 id="開啟-Nuxt-專案"><a href="#開啟-Nuxt-專案" class="headerlink" title="開啟 Nuxt 專案"></a>開啟 Nuxt 專案</h2><p>使用編輯器，路徑選擇建立的專案，並使用命令執行。</p>
+<p>Nuxt 提供幾種模式</p>
+<ul>
+<li><p>開發模式</p>
+<ul>
+<li><code>npm run dev</code></li>
+</ul>
+</li>
+<li><p>生產模式</p>
+<ul>
+<li><code>npm run build</code> (使用 webpack 將資源打包，部屬用)</li>
+<li><code>npm run start</code> (以生產模式開啟 web 伺服器)</li>
+</ul>
+</li>
+<li><p>靜態應用</p>
+<ul>
+<li><code>npm run generate</code></li>
+</ul>
+</li>
+</ul>
+<p>執行 <code>npm run dev</code> 後，打開預設的 3000 port，就可以看到:</p>
+<p><img src="https://i.imgur.com/bViDPRd.png" alt=""></p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在 Nuxt 中，必須注意引入的套件或撰寫時是否使用到瀏覽器的 API，例如 <code>alert()</code>，因為 Nuxt 底層的 Node 是不能使用瀏覽器語法的。例如我在 pages/index.vue 中加入一個 created 生命週期並寫 <code>alert()</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import Logo from &#39;~&#x2F;components&#x2F;Logo.vue&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    Logo</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    alert(&#39;It would be error Q_Q&#39;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>出錯了 :( </p>
+<p><img src="https://i.imgur.com/e2PcyX3.png" alt=""></p>
+<p><strong>撰寫 Nuxt 時，要考慮到這是 Node.js 執行環境</strong>，Node 是不支援瀏覽器 window 屬性的。</p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/installation" target="_blank" rel="noopener">Nuxt 安裝</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -175,7 +277,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/" class="post-title-link" itemprop="url">[NuxtJS] NuxtJS 教學(0) - Nuxt 是什麼?</a>
+            <a href="/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?</a>
         </h2>
 
         <div class="post-meta">
@@ -192,7 +294,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-02 16:08:52" itemprop="dateModified" datetime="2020-04-02T16:08:52+08:00">2020-04-02</time>
+                <time title="修改時間：2020-04-08 11:01:02" itemprop="dateModified" datetime="2020-04-08T11:01:02+08:00">2020-04-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -376,7 +478,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

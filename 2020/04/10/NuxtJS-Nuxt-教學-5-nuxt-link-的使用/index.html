@@ -28,7 +28,7 @@
 <meta property="og:description" content="如同 Vue 的 router-link，Nuxt 有 nuxt-link 來切換路由。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-04-10T13:13:21.000Z">
-<meta property="article:modified_time" content="2020-04-10T13:36:29.873Z">
+<meta property="article:modified_time" content="2020-04-10T15:05:04.421Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-10 21:13:21 / 修改時間：21:36:29" itemprop="dateCreated datePublished" datetime="2020-04-10T21:13:21+08:00">2020-04-10</time>
+              <time title="創建時間：2020-04-10 21:13:21 / 修改時間：23:05:04" itemprop="dateCreated datePublished" datetime="2020-04-10T21:13:21+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,9 +217,9 @@
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// 首頁</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span> nuxt-link <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/users"</span>&gt;</span>使用者介面<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="nuxt-link-特性"><a href="#nuxt-link-特性" class="headerlink" title="nuxt-link 特性"></a>nuxt-link 特性</h2><p>nuxt-link 會預加載跳往頁面的資源，例如上面連結是 /users，那麼在當前頁面中，Nuxt 就已經會預先載好的 users 的資源，例如 users 的 CSS 或 JS</p>
-<p>如果你想取消預加載，可以使用:</p>
+<p>如果想取消預加載，可以使用 no-prefetch</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/users"</span> <span class="attr">no-prefetch</span> &gt;</span>使用者介面<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>若加載資源愈多，那麼當前頁面 loading 會愈長，可依自身需求是否啟用預加載，。</p>
+<p>若加載資源愈多，那麼當前頁面 loading 時間會愈長，可依自身需求是否啟用預加載。</p>
 <blockquote>
 <p>注意: 在 Nuxt 中，router-link 也是可以使用的，但不建議，因為 router-link 不會預加載資源</p>
 </blockquote>

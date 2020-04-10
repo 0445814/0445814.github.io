@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"0445814.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="建立你的 Nuxt 專案吧~!">
+  <meta name="description" content="在 Vue-cli 中的元件進入點是 App.vue 裡的 ，而在 Nuxt 中，元件進入點則是 layouts 資料裡的  元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[NuxtJS] Nuxt 教學(2) - Scss 安裝與路徑的引用">
-<meta property="og:url" content="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-2-Scss-%E5%AE%89%E8%A3%9D%E8%88%87%E5%BC%95%E7%94%A8/index.html">
+<meta property="og:title" content="[NuxtJS] Nuxt 教學(4) - layout 與錯誤處理">
+<meta property="og:url" content="http://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-4-layout-%E8%88%87%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/index.html">
 <meta property="og:site_name" content="Ken">
-<meta property="og:description" content="建立你的 Nuxt 專案吧~!">
+<meta property="og:description" content="在 Vue-cli 中的元件進入點是 App.vue 裡的 ，而在 Nuxt 中，元件進入點則是 layouts 資料裡的  元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-04-08T04:48:47.000Z">
-<meta property="article:modified_time" content="2020-04-10T10:10:06.856Z">
+<meta property="article:published_time" content="2020-04-10T10:33:22.000Z">
+<meta property="article:modified_time" content="2020-04-10T11:39:48.103Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-2-Scss-%E5%AE%89%E8%A3%9D%E8%88%87%E5%BC%95%E7%94%A8/">
+<link rel="canonical" href="http://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-4-layout-%E8%88%87%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>[NuxtJS] Nuxt 教學(2) - Scss 安裝與路徑的引用 | Ken</title>
+  <title>[NuxtJS] Nuxt 教學(4) - layout 與錯誤處理 | Ken</title>
   
 
 
@@ -164,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-2-Scss-%E5%AE%89%E8%A3%9D%E8%88%87%E5%BC%95%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-4-layout-%E8%88%87%E9%8C%AF%E8%AA%A4%E8%99%95%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -177,7 +177,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          [NuxtJS] Nuxt 教學(2) - Scss 安裝與路徑的引用
+          [NuxtJS] Nuxt 教學(4) - layout 與錯誤處理
         </h2>
 
         <div class="post-meta">
@@ -186,16 +186,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-04-08 12:48:47" itemprop="dateCreated datePublished" datetime="2020-04-08T12:48:47+08:00">2020-04-08</time>
+              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：19:39:48" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-10 18:10:06" itemprop="dateModified" datetime="2020-04-10T18:10:06+08:00">2020-04-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -207,7 +201,6 @@
             </span>
 
           
-            <div class="post-description">建立你的 Nuxt 專案吧~!</div>
 
         </div>
       </header>
@@ -218,34 +211,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Nuxt-的路徑引用"><a href="#Nuxt-的路徑引用" class="headerlink" title="Nuxt 的路徑引用"></a>Nuxt 的路徑引用</h2><ol>
-<li>使用 <strong>~ @</strong> 代表跟目錄</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Logo <span class="keyword">from</span> <span class="string">'~/components/Logo.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Navbar <span class="keyword">from</span> <span class="string">'@/components/Navbar.vue'</span></span><br></pre></td></tr></table></figure>
+        <p>在 Vue-cli 中的元件進入點是 App.vue 裡的 <router-view />，而在 Nuxt 中，元件進入點則是 layouts 資料裡的 <nuxt /> 元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。</p>
+<a id="more"></a>
+
+<p>先來看看預設的 layouts 的結構吧!</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;layouts&#x2F;default.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#x2F;&#x2F; 進入點</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">html &#123;</span><br><span class="line">  font-family: &#39;Source Sans Pro&#39;, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;,</span><br><span class="line">    Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">  word-spacing: 1px;</span><br><span class="line">  -ms-text-size-adjust: 100%;</span><br><span class="line">  -webkit-text-size-adjust: 100%;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*,</span><br><span class="line">*:before,</span><br><span class="line">*:after &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--green &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  border: 1px solid #3b8070;</span><br><span class="line">  color: #3b8070;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  padding: 10px 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--green:hover &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">  background-color: #3b8070;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--grey &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  border: 1px solid #35495e;</span><br><span class="line">  color: #35495e;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  padding: 10px 30px;</span><br><span class="line">  margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--grey:hover &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">  background-color: #35495e;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="替換-layout"><a href="#替換-layout" class="headerlink" title="替換 layout"></a>替換 layout</h2><p>pages 每個頁面預設是 layouts/default.vue，你可以試著在 default.vue 中做一些變動，例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 default 的 layout&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若想是在某些頁面使用特定 layout 覆蓋原本的 default.vue，需要在 pages 的頁面中使用 layout: ‘覆蓋的 layout’。(每個頁面預設是 layout: ‘default’，但不需撰寫)</p>
+<p>首先，在 layouts 裡新增一個 users.vue，並加入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 users 的 layout 唷!&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>接著，在 pages 中新增一個資料夾命名為 users，並在裡面新增一個 index.vue 作為預設渲染組件。</p>
 <blockquote>
-<p>注意: 在 nuxt.config.js 中或非 Nuxt 結構的 js 除外。</p>
+<p>只要設定 pages 資料夾，Nuxt 就會自動監聽資料夾變動並生成路由，可以在打包後的 .nuxt/router.js 中查看。pages 與 router 待之後詳述。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// nuxt.config.js</span></span><br><span class="line"><span class="comment">// 在外部使用 ~ @ 引入會出錯</span></span><br><span class="line"><span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">'@/assets/js/test'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在內部可以使用 ~ @</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">'universal'</span>,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br></pre></td></tr></table></figure>
+<p>來設定覆蓋原本的 layout 吧!</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;pages&#x2F;users&#x2F;index.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    這是 user 頁面</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  layout: &#39;users&#39;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-
-<ol start="2">
-<li>./ 當前目錄引用</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ./ 當前目錄</span></span><br><span class="line"><span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">'./test.vue'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ../ 上一層目錄</span></span><br><span class="line"><span class="keyword">import</span> test2 <span class="keyword">from</span> <span class="string">'../assets/js/test.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ../../ 上上一層，以此類推</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>引入 static 資料夾的檔案<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/logo.png"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="安裝-Scss"><a href="#安裝-Scss" class="headerlink" title="安裝 Scss"></a>安裝 Scss</h2><p>Nuxt 並沒有像 Vue-cli 一樣已經安裝好 Scss，需自己額外安裝引入 Scss 套件。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install --save-dev node-sass sass-loader</span><br></pre></td></tr></table></figure>
-
-<p>這樣就可以在 Nuxt 中使用 Scss 了</p>
+<p>就可以看替換掉原本的 default.vue 了。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>就像 Vue-cli 中的 public/index.html，你也可以在 Nuxt 客製化自己的 html 模板，只需要在根目錄中建立一個 app.html 的檔案。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- app.html --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> &#123;&#123; <span class="attr">HTML_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span> &#123;&#123; <span class="attr">HEAD_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">    &#123;&#123; HEAD &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> &#123;&#123; <span class="attr">BODY_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">    &#123;&#123; APP &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意 Nuxt 的 .vue 檔中的 style 標籤，需使用 lang=”scss”，才能正確編譯 scss。<br>scoped 則為樣式只套用當前組件。</p>
+<p>注意: 這不是 layout。一般而言，不會去動到 的表達式結構，因為可能會發生顯示不符合預期的問題</p>
 </blockquote>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">&lt;style lang="scss" scoped &gt;</span><br><span class="line"><span class="keyword">@import</span> <span class="string">"@/assets/scss/_custom.scss"</span></span><br><span class="line"></span><br><span class="line">h1 &#123;</span><br><span class="line">  <span class="keyword">@extend</span> %title-color</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="錯誤處理"><a href="#錯誤處理" class="headerlink" title="錯誤處理"></a>錯誤處理</h2><p>如果使用者進入不存在頁面(404)，或是有其他錯誤，可以將頁面導到錯誤頁面。</p>
+<p>首先，在 layouts 中，新增 error.vue (名稱是固定的)，並加入:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    &lt;h1 v-if&#x3D;&quot;error.statusCode &#x3D;&#x3D;&#x3D; 404&quot;&gt;頁面不存在&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;nuxt-link to&#x3D;&quot;&#x2F;&quot;&gt;首 頁&lt;&#x2F;nuxt-link&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;error&#39;],</span><br><span class="line">  layout: &#39;blog&#39; &#x2F;&#x2F; 你可以為錯誤頁面指定自定義的佈局</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: 雖然 error.vue 是放在 layouts，但你應該將它是為一個頁面。<br>在 error.vue 中，不需要 <nuxt /> 組件。</p>
+</blockquote>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/views#%E6%A8%A1%E6%9D%BF" target="_blank" rel="noopener">Nuxt 視圖</a></p>
+
     </div>
 
     
@@ -263,13 +263,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" rel="prev" title="[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項">
-      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項
+    <a href="/2020/04/09/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-3-nuxt-config-js-%E8%A8%AD%E5%AE%9A/" rel="prev" title="[NuxtJS] Nuxt 教學(3) - nuxt.config.js 設定">
+      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(3) - nuxt.config.js 設定
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/09/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-3-nuxt-config-js-%E8%A8%AD%E5%AE%9A/" rel="next" title="[NuxtJS] Nuxt 教學(3) - nuxt.config.js 設定">
-      [NuxtJS] Nuxt 教學(3) - nuxt.config.js 設定 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -329,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nuxt-的路徑引用"><span class="nav-number">1.</span> <span class="nav-text">Nuxt 的路徑引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-Scss"><span class="nav-number">2.</span> <span class="nav-text">安裝 Scss</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#替換-layout"><span class="nav-number">1.</span> <span class="nav-text">替換 layout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模板"><span class="nav-number">2.</span> <span class="nav-text">模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#錯誤處理"><span class="nav-number">3.</span> <span class="nav-text">錯誤處理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">4.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

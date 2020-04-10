@@ -28,7 +28,7 @@
 <meta property="og:description" content="在 Vue-cli 中的元件進入點是 App.vue 裡的 ，而在 Nuxt 中，元件進入點則是 layouts 資料裡的  元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-04-10T10:33:22.000Z">
-<meta property="article:modified_time" content="2020-04-10T11:41:59.532Z">
+<meta property="article:modified_time" content="2020-04-10T12:29:19.996Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：19:41:59" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
+              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：20:29:19" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,6 +237,8 @@
 <blockquote>
 <p>注意: 這不是 layout。一般而言，不會去動到括號的表達式結構，因為可能會發生顯示不符合預期的問題。</p>
 </blockquote>
+<p>Nuxt 官網的圖片會更清楚 page、layout 與 模板之間的關係</p>
+<p><a href="https://zh.nuxtjs.org/nuxt-views-schema.svg" target="_blank" rel="noopener"></a></p>
 <h2 id="錯誤處理"><a href="#錯誤處理" class="headerlink" title="錯誤處理"></a>錯誤處理</h2><p>如果使用者進入不存在頁面(404)，或是有其他錯誤，可以將頁面導到錯誤頁面。</p>
 <p>首先，在 layouts 中，新增 error.vue (名稱是固定的)，並加入:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; layouts&#x2F;error.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    &lt;h1 v-if&#x3D;&quot;error.statusCode &#x3D;&#x3D;&#x3D; 404&quot;&gt;頁面不存在&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;nuxt-link to&#x3D;&quot;&#x2F;&quot;&gt;首 頁&lt;&#x2F;nuxt-link&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;error&#39;],</span><br><span class="line">  layout: &#39;blog&#39; &#x2F;&#x2F; 你可以為錯誤頁面指定自定義的佈局</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>

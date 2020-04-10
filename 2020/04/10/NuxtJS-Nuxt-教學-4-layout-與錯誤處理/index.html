@@ -28,7 +28,7 @@
 <meta property="og:description" content="在 Vue-cli 中的元件進入點是 App.vue 裡的 ，而在 Nuxt 中，元件進入點則是 layouts 資料裡的  元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-04-10T10:33:22.000Z">
-<meta property="article:modified_time" content="2020-04-10T11:39:58.578Z">
+<meta property="article:modified_time" content="2020-04-10T11:41:59.532Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：19:39:58" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
+              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：19:41:59" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,12 +215,12 @@
 <a id="more"></a>
 
 <p>先來看看預設的 layouts 的結構吧!</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;layouts&#x2F;default.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#x2F;&#x2F; 進入點</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">html &#123;</span><br><span class="line">  font-family: &#39;Source Sans Pro&#39;, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;,</span><br><span class="line">    Roboto, &#39;Helvetica Neue&#39;, Arial, sans-serif;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">  word-spacing: 1px;</span><br><span class="line">  -ms-text-size-adjust: 100%;</span><br><span class="line">  -webkit-text-size-adjust: 100%;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*,</span><br><span class="line">*:before,</span><br><span class="line">*:after &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  margin: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--green &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  border: 1px solid #3b8070;</span><br><span class="line">  color: #3b8070;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  padding: 10px 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--green:hover &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">  background-color: #3b8070;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--grey &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  border: 1px solid #35495e;</span><br><span class="line">  color: #35495e;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  padding: 10px 30px;</span><br><span class="line">  margin-left: 15px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.button--grey:hover &#123;</span><br><span class="line">  color: #fff;</span><br><span class="line">  background-color: #35495e;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;layouts&#x2F;default.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#x2F;&#x2F; 進入點</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&#x2F;* 略 *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="替換-layout"><a href="#替換-layout" class="headerlink" title="替換 layout"></a>替換 layout</h2><p>pages 每個頁面預設是 layouts/default.vue，你可以試著在 default.vue 中做一些變動，例如:</p>
+<h2 id="替換-layout"><a href="#替換-layout" class="headerlink" title="替換 layout"></a>替換 layout</h2><p>pages 每個頁面預設是 layouts/default.vue，試著在 default.vue 中做一些變動，例如:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 default 的 layout&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
 
-<p>若想是在某些頁面使用特定 layout 覆蓋原本的 default.vue，需要在 pages 的頁面中使用 layout: ‘覆蓋的 layout’。(每個頁面預設是 layout: ‘default’，但不需撰寫)</p>
+<p>若想是在某些頁面使用特定 layout 覆蓋原本的 default.vue，需要在 pages 的頁面中使用 layout: ‘覆蓋的 layout 名稱’。(每個頁面預設是 layout: ‘default’，但不需撰寫)</p>
 <p>首先，在 layouts 裡新增一個 users.vue，並加入</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 users 的 layout 唷!&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
 
@@ -235,14 +235,14 @@
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>就像 Vue-cli 中的 public/index.html，你也可以在 Nuxt 客製化自己的 html 模板，只需要在根目錄中建立一個 app.html 的檔案。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- app.html --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> &#123;&#123; <span class="attr">HTML_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span> &#123;&#123; <span class="attr">HEAD_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">    &#123;&#123; HEAD &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> &#123;&#123; <span class="attr">BODY_ATTRS</span> &#125;&#125;&gt;</span></span><br><span class="line">    &#123;&#123; APP &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意: 這不是 layout。一般而言，不會去動到括號的表達式結構，因為可能會發生顯示不符合預期的問題</p>
+<p>注意: 這不是 layout。一般而言，不會去動到括號的表達式結構，因為可能會發生顯示不符合預期的問題。</p>
 </blockquote>
 <h2 id="錯誤處理"><a href="#錯誤處理" class="headerlink" title="錯誤處理"></a>錯誤處理</h2><p>如果使用者進入不存在頁面(404)，或是有其他錯誤，可以將頁面導到錯誤頁面。</p>
 <p>首先，在 layouts 中，新增 error.vue (名稱是固定的)，並加入:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    &lt;h1 v-if&#x3D;&quot;error.statusCode &#x3D;&#x3D;&#x3D; 404&quot;&gt;頁面不存在&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;nuxt-link to&#x3D;&quot;&#x2F;&quot;&gt;首 頁&lt;&#x2F;nuxt-link&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;error&#39;],</span><br><span class="line">  layout: &#39;blog&#39; &#x2F;&#x2F; 你可以為錯誤頁面指定自定義的佈局</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; layouts&#x2F;error.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    &lt;h1 v-if&#x3D;&quot;error.statusCode &#x3D;&#x3D;&#x3D; 404&quot;&gt;頁面不存在&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;nuxt-link to&#x3D;&quot;&#x2F;&quot;&gt;首 頁&lt;&#x2F;nuxt-link&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;error&#39;],</span><br><span class="line">  layout: &#39;blog&#39; &#x2F;&#x2F; 你可以為錯誤頁面指定自定義的佈局</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>注意: 雖然 error.vue 是放在 layouts，但你應該將它是為一個頁面。<br>在 error.vue 中，不需要 <nuxt /> 組件。</p>
+<p>注意: 雖然 error.vue 是放在 layouts，但你應該將它看作一個頁面。<br>在 error.vue 中，不需要 <nuxt /> 組件。</p>
 </blockquote>
 <h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/views#%E6%A8%A1%E6%9D%BF" target="_blank" rel="noopener">Nuxt 視圖</a></p>
 

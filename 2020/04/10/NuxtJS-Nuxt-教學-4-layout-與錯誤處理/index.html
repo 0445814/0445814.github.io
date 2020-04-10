@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://zh.nuxtjs.org/nuxt-views-schema.svg">
 <meta property="article:published_time" content="2020-04-10T10:33:22.000Z">
-<meta property="article:modified_time" content="2020-04-10T12:50:03.681Z">
+<meta property="article:modified_time" content="2020-04-10T12:54:34.631Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：20:50:03" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
+              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：20:54:34" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,7 +217,7 @@
 <a id="more"></a>
 
 <p>先來看看預設的 layouts 的結構吧!</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// /layouts/default.vue</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    <span class="comment">// 進入點</span></span><br><span class="line">    &lt;nuxt /&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"><span class="comment">/* 略 */</span></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// /layouts/default.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    // 進入點</span><br><span class="line">    <span class="tag">&lt;<span class="name">nuxt</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="comment">/* 略 */</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="替換-layout"><a href="#替換-layout" class="headerlink" title="替換 layout"></a>替換 layout</h2><p>pages 每個頁面預設是 layouts/default.vue，試著在 default.vue 中做一些變動，例如:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 <span class="keyword">default</span> 的 layout&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;nuxt /</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>

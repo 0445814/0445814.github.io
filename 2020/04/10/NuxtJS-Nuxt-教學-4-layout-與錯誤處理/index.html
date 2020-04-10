@@ -28,7 +28,7 @@
 <meta property="og:description" content="在 Vue-cli 中的元件進入點是 App.vue 裡的 ，而在 Nuxt 中，元件進入點則是 layouts 資料裡的  元件。所以，我們可以很輕易的在某些頁面中插入特定的 layout。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-04-10T10:33:22.000Z">
-<meta property="article:modified_time" content="2020-04-10T12:29:19.996Z">
+<meta property="article:modified_time" content="2020-04-10T12:30:05.075Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：20:29:19" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
+              <time title="創建時間：2020-04-10 18:33:22 / 修改時間：20:30:05" itemprop="dateCreated datePublished" datetime="2020-04-10T18:33:22+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,21 +215,21 @@
 <a id="more"></a>
 
 <p>先來看看預設的 layouts 的結構吧!</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;layouts&#x2F;default.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#x2F;&#x2F; 進入點</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&#x2F;* 略 *&#x2F;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// /layouts/default.vue</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    <span class="comment">// 進入點</span></span><br><span class="line">    &lt;nuxt /&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"><span class="comment">/* 略 */</span></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="替換-layout"><a href="#替換-layout" class="headerlink" title="替換 layout"></a>替換 layout</h2><p>pages 每個頁面預設是 layouts/default.vue，試著在 default.vue 中做一些變動，例如:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 default 的 layout&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 <span class="keyword">default</span> 的 layout&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;nuxt /</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
 
 <p>若想是在某些頁面使用特定 layout 覆蓋原本的 default.vue，需要在 pages 的頁面中使用 layout: ‘覆蓋的 layout 名稱’。(每個頁面預設是 layout: ‘default’，但不需撰寫)</p>
 <p>首先，在 layouts 裡新增一個 users.vue，並加入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 users 的 layout 唷!&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;nuxt &#x2F;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h2&gt;這是 users 的 layout 唷!&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;nuxt /</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br></pre></td></tr></table></figure>
 
 <p>接著，在 pages 中新增一個資料夾命名為 users，並在裡面新增一個 index.vue 作為預設渲染組件。</p>
 <blockquote>
 <p>只要設定 pages 資料夾，Nuxt 就會自動監聽資料夾變動並生成路由，可以在打包後的 .nuxt/router.js 中查看。pages 與 router 待之後詳述。</p>
 </blockquote>
 <p>來設定覆蓋原本的 layout 吧!</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; &#x2F;pages&#x2F;users&#x2F;index.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    這是 user 頁面</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  layout: &#39;users&#39;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// /pages/users/index.vue</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    這是 user 頁面</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  layout: <span class="string">'users'</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>就可以看替換掉原本的 default.vue 了。</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>就像 Vue-cli 中的 public/index.html，你也可以在 Nuxt 客製化自己的 html 模板，只需要在根目錄中建立一個 app.html 的檔案。</p>
@@ -241,7 +241,7 @@
 <p><a href="https://zh.nuxtjs.org/nuxt-views-schema.svg" target="_blank" rel="noopener"></a></p>
 <h2 id="錯誤處理"><a href="#錯誤處理" class="headerlink" title="錯誤處理"></a>錯誤處理</h2><p>如果使用者進入不存在頁面(404)，或是有其他錯誤，可以將頁面導到錯誤頁面。</p>
 <p>首先，在 layouts 中，新增 error.vue (名稱是固定的)，並加入:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; layouts&#x2F;error.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;container&quot;&gt;</span><br><span class="line">    &lt;h1 v-if&#x3D;&quot;error.statusCode &#x3D;&#x3D;&#x3D; 404&quot;&gt;頁面不存在&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;nuxt-link to&#x3D;&quot;&#x2F;&quot;&gt;首 頁&lt;&#x2F;nuxt-link&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: [&#39;error&#39;],</span><br><span class="line">  layout: &#39;blog&#39; &#x2F;&#x2F; 你可以為錯誤頁面指定自定義的佈局</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// layouts/error.vue</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;h1 v-<span class="keyword">if</span>=<span class="string">"error.statusCode === 404"</span>&gt;頁面不存在&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    &lt;h1 v-else&gt;應用發生錯誤異常&lt;/</span>h1&gt;</span><br><span class="line">    &lt;nuxt-link to=<span class="string">"/"</span>&gt;首 頁&lt;<span class="regexp">/nuxt-link&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">  props: ['error'],</span></span><br><span class="line"><span class="regexp">  layout: 'blog' /</span><span class="regexp">/ 你可以為錯誤頁面指定自定義的佈局</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>注意: 雖然 error.vue 是放在 layouts，但你應該將它看作一個頁面。<br>在 error.vue 中，不需要 <nuxt /> 組件。</p>

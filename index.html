@@ -161,6 +161,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ken Chang">
+      <meta itemprop="description" content="前端學習紀錄">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ken">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(6) - Nuxt 中的 component 定義與使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-04-11 16:47:38 / 修改時間：17:36:16" itemprop="dateCreated datePublished" datetime="2020-04-11T16:47:38+08:00">2020-04-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NuxtJS/" itemprop="url" rel="index"><span itemprop="name">NuxtJS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="component-定義"><a href="#component-定義" class="headerlink" title="component 定義"></a>component 定義</h2><p>在 Vue 中，廣義來說，.vue 就可視為一個 component，所以若使用 Vue-cli 開發，為了能更加清楚化專案結構，我們通常會將 .vue 區分成 components 與 views，意即某些 .vue 我們視為元件，某些視為頁面。</p>
+<p>而在 Nuxt 中的 .vue 的定義會更加分明，components 中的屬於元件，pages 中的屬於頁面。最大的不同是，pages 中的 .vue 可以設定 <code>layout</code>、<code>head</code> 或是使用 <code>asyncData</code> 方法等，但在 components 的 .vue 是無法使用的。</p>
+<p>例如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- components/Navbar.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    我是 navbar component</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 錯誤，無法使用</span></span></span><br><span class="line"><span class="actionscript">    layout: <span class="string">"demo"</span>,</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="string">"Hello ! It doesn't work Q_Q"</span>,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 當然這也不能用</span></span></span><br><span class="line">    head() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="keyword">this</span>.title,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>建立與使用一個 component 是相當簡單的 !，我們可以在 components 中，新增一個 Navbar.vue (注意命名，通常會使用大寫加以清楚辨識)，接著只需要在其他 .vue 中引入即可，例如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pages/index.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Navbar</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 建議都使用大寫，但小寫不會出錯 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logo</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// Nuxt 預設引入的 Logo 組件</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 可以使用 ES6 的 import 將 component 引入</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Logo <span class="keyword">from</span> <span class="string">"~/components/Logo.vue"</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    components: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 使用 ES6 物件解構進行組件註冊</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 實際上是: Logo: Logo，但可以簡寫</span></span></span><br><span class="line">      Logo,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 另一種是 webpack 的 import</span></span></span><br><span class="line"><span class="javascript">      Navbar: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">"@/components/Navbar"</span>),</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其他的組件使用如 <a href="https://cn.vuejs.org/v2/guide/components-props.html#ad" target="_blank" rel="noopener">props</a>、<a href="https://cn.vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">$emit</a> 或 <a href="https://cn.vuejs.org/v2/guide/components-slots.html" target="_blank" rel="noopener">slot</a> 等，因為與原本 Vue.js 相同，在此不多敘述，可直接參考官方文件。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-5-nuxt-link-%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -763,7 +839,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

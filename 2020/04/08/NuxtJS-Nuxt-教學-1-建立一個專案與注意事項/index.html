@@ -20,25 +20,23 @@
     var CONFIG = {"hostname":"0445814.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。">
+  <meta name="description" content="建立你的 Nuxt 專案吧~!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?">
-<meta property="og:url" content="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/index.html">
+<meta property="og:title" content="[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項">
+<meta property="og:url" content="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/index.html">
 <meta property="og:site_name" content="Ken">
-<meta property="og:description" content="這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。">
+<meta property="og:description" content="建立你的 Nuxt 專案吧~!">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/sh1Nrjz.png">
-<meta property="og:image" content="https://i.imgur.com/LWH3mtl.png">
-<meta property="og:image" content="https://i.imgur.com/eAOi65c.png">
-<meta property="og:image" content="https://i.imgur.com/XiIG7LY.png">
-<meta property="article:published_time" content="2020-04-01T11:13:11.000Z">
-<meta property="article:modified_time" content="2020-04-09T06:18:08.298Z">
+<meta property="og:image" content="https://i.imgur.com/bViDPRd.png">
+<meta property="og:image" content="https://i.imgur.com/e2PcyX3.png">
+<meta property="article:published_time" content="2020-04-08T02:58:43.000Z">
+<meta property="article:modified_time" content="2020-04-11T09:43:58.848Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/sh1Nrjz.png">
+<meta name="twitter:image" content="https://i.imgur.com/bViDPRd.png">
 
-<link rel="canonical" href="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
+<link rel="canonical" href="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
 
 
 <script id="page-configurations">
@@ -50,7 +48,7 @@
   };
 </script>
 
-  <title>[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ? | Ken</title>
+  <title>[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項 | Ken</title>
   
 
 
@@ -169,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -182,7 +180,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          [NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?
+          [NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項
         </h2>
 
         <div class="post-meta">
@@ -192,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-04-01 19:13:11" itemprop="dateCreated datePublished" datetime="2020-04-01T19:13:11+08:00">2020-04-01</time>
+              <time title="創建時間：2020-04-08 10:58:43" itemprop="dateCreated datePublished" datetime="2020-04-08T10:58:43+08:00">2020-04-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-09 14:18:08" itemprop="dateModified" datetime="2020-04-09T14:18:08+08:00">2020-04-09</time>
+                <time title="修改時間：2020-04-11 17:43:58" itemprop="dateModified" datetime="2020-04-11T17:43:58+08:00">2020-04-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -212,7 +210,7 @@
             </span>
 
           
-            <div class="post-description">這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。</div>
+            <div class="post-description">建立你的 Nuxt 專案吧~!</div>
 
         </div>
       </header>
@@ -223,39 +221,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Vue Cli 4 完成<a href="https://0445814.github.io/V-Headphone/#/">電商作業</a>後，當然要繼續學習新東西了。</p>
-<p>開始學習 <a href="https://nuxtjs.org/" target="_blank" rel="noopener">Nuxt</a> 後，發現這個框架有許多特性非常好，以後學習重心應該會從 Vue Cli 轉向 Nuxt 了。</p>
-<p>總之，這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。</p>
-<h2 id="Nuxt-是什麼"><a href="#Nuxt-是什麼" class="headerlink" title="Nuxt 是什麼?"></a>Nuxt 是什麼?</h2><blockquote>
-<p>官方: Nuxt 是一個基於 Vue.js 的通用應用框架。<br>Nuxt 是一個高度封裝的 SSR 應用框架。</p>
-</blockquote>
-<p>所以，如果本身就是寫 Vue 的開發者來說，使用 Nuxt 開發，你仍然是寫 Vue，並沒有不同，只是 Nuxt 多了許多特色，</p>
-<p>雖然官網介紹已經將特色寫得很清楚，這裡只列出我認為與 Vue Cli 最明顯差別，例如:</p>
-<ul>
-<li>伺服器端渲染</li>
-<li>快速建立路由</li>
-<li>方便的 nuxt.config.js 管理</li>
-</ul>
-<h3 id="伺服器端渲染"><a href="#伺服器端渲染" class="headerlink" title="伺服器端渲染"></a>伺服器端渲染</h3><p>如果曾經使用過 Vue Cli 開發，就會發現如果對網站按右鍵 -&gt; 檢查網頁原始碼，只會看到一些基本標籤，沒辦法看到網站內容，</p>
-<p>例如查看一個 SPA 網站原始碼:</p>
-<p><img src="https://i.imgur.com/sh1Nrjz.png" alt="V-Headphone 電商原始碼"></p>
-<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
-<p>但如果是使用 Nuxt 時:</p>
-<p><img src="https://i.imgur.com/LWH3mtl.png" alt="Nuxt init"><br><img src="https://i.imgur.com/eAOi65c.png" alt="Nuxt.js 初始建立原始碼"></p>
-<p>Nuxt 在使用者一開始進入網頁時，會在後端先將頁面生好，再傳給瀏覽器給使用者，所以打開網頁原始碼是可以看見內容的，這就是 SSR (Server side render) 伺服器端渲染</p>
-<p>並且之後使用者在瀏覽網站時，例如跳轉路由，仍然是 SPA 體驗，意即 Nuxt 同時擁有了 SSR 渲染對 SEO 友善的好處，也保留了 SPA 良好的使用者體驗。</p>
-<p><del>感覺之後可以額外寫一篇關於 前端渲染、後端渲染與前後端分離的文章。</del></p>
-<h3 id="快速建立路由"><a href="#快速建立路由" class="headerlink" title="快速建立路由"></a>快速建立路由</h3><p>在 Vue Cli 建立路由時需要自己配置(當然建立專案時直接安裝 vue-router，另當別論 XD)，得建立一個 JS 檔案配置好路由後，在 main.js (進入點) 引入它，雖然稱不上麻煩，但我認為 Nuxt 在路由方面做得更直觀，只需要在 pages 資料夾內建立路由名稱資料夾放置要渲染的 .vue 檔即可，例如新增一個 products 資料夾，裡面放入 index.vue</p>
-<p><img src="https://i.imgur.com/XiIG7LY.png" alt="Nuxt 路由"></p>
-<p>這樣簡單的建立資料夾，Nuxt 就會自動配置路由，是不是相當方便呢 !</p>
-<h3 id="方便的-nuxt-config-js-管理"><a href="#方便的-nuxt-config-js-管理" class="headerlink" title="方便的 nuxt.config.js 管理"></a>方便的 nuxt.config.js 管理</h3><p>目前新版腳手架的開發方向，是偏向不讓開發者去設定 webpack 的(React 與 Vue Cli 4 都將 webpack 藏起來惹)。</p>
-<p>而 Nuxt 許多設定都統一在 nuxt.config.js 作管理，例如 HTML 的 <head> 只需要在 meta 中配置即可，而 webpack 在 build 作設定，所有配置都在這一目了然，</p>
-<p>詳細待之後教學。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 部分 nuxt.config.js 程式碼</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">'universal'</span>,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    title: process.env.npm_package_name || <span class="string">''</span>,</span><br><span class="line">    meta: [</span><br><span class="line">      &#123; <span class="attr">charset</span>: <span class="string">'utf-8'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">'viewport'</span>, <span class="attr">content</span>: <span class="string">'width=device-width, initial-scale=1'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">hid</span>: <span class="string">'description'</span>, <span class="attr">name</span>: <span class="string">'description'</span>, <span class="attr">content</span>: process.env.npm_package_description || <span class="string">''</span> &#125;</span><br><span class="line">    ],</span><br><span class="line">    link: [</span><br><span class="line">      &#123; <span class="attr">rel</span>: <span class="string">'icon'</span>, <span class="attr">type</span>: <span class="string">'image/x-icon'</span>, <span class="attr">href</span>: <span class="string">'/favicon.ico'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   *  ... 還有許多設定 </span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line"></span><br><span class="line">    build: &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ** You can extend webpack config here</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    extend (config, ctx) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="起手式"><a href="#起手式" class="headerlink" title="起手式"></a>起手式</h2><p>如同 Vue-Cli，Nuxt 也提供腳手架工具讓開發者快速建立一個專案。請先確認自己有安裝 Node.js，才能執行下載哦 !</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 終端機輸入</span></span><br><span class="line">npx create-nuxt-app &lt;專案名稱&gt;</span><br></pre></td></tr></table></figure>
 
-<p>希望這篇可以幫助你快速了解 Nuxt 是什麼，為什麼要使用它，它跟 Vue Cli 之間有什麼差別，</p>
-<p>下一篇就會開始建立 Nuxt 專案，開始學習囉!</p>
-<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/" target="_blank" rel="noopener">NuxtJS</a><br><a href="https://hiskio.com/courses/342" target="_blank" rel="noopener">NUXT.js 前端開發實戰手冊</a><br><a href="https://www.udemy.com/course/nuxtjs-vuejs-on-steroids/" target="_blank" rel="noopener">Nuxt.js - Vue.js on Steroids</a></p>
+<p>npx 命令會在執行後，將套件刪除，這樣就可避免在本地電腦多一些不必要的檔案而污染到全域套件。</p>
+<h2 id="專案設定"><a href="#專案設定" class="headerlink" title="專案設定"></a>專案設定</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 專案名稱，直接 Enter 會用預設</span></span><br><span class="line">? Project name Hello</span><br><span class="line"><span class="meta">#</span><span class="bash"> 專案描述</span></span><br><span class="line">? Project description My stellar Nuxt.js project</span><br><span class="line"><span class="meta">#</span><span class="bash"> 作者名稱</span></span><br><span class="line">? Author name Ken Chang</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 JavaScript 或 TypeScript</span></span><br><span class="line">? Choose programming language JavaScript</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇套件管理工具 npm 或 yarn</span></span><br><span class="line">? Choose the package manager Npm</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 UI 框架</span></span><br><span class="line">? Choose UI framework None</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇 伺服器框架，通常選 None</span></span><br><span class="line">? Choose custom server framework None (Recommended)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 是否安裝 Axios ?</span></span><br><span class="line">? Choose Nuxt.js modules Axios</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇程式碼規範檢查</span></span><br><span class="line">? Choose linting tools ESLint</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇測試框架</span></span><br><span class="line">? Choose test framework None</span><br><span class="line"><span class="meta">#</span><span class="bash"> 選擇渲染模式，SSR 或 SPA，用 Nuxt 當然是選 SSR 囉 !</span></span><br><span class="line">? Choose rendering mode Universal (SSR)</span><br></pre></td></tr></table></figure>
+
+<h2 id="開啟-Nuxt-專案"><a href="#開啟-Nuxt-專案" class="headerlink" title="開啟 Nuxt 專案"></a>開啟 Nuxt 專案</h2><p>使用編輯器，路徑選擇建立的專案，並使用命令執行。</p>
+<p>Nuxt 提供幾種模式</p>
+<ul>
+<li><p>開發模式</p>
+<ul>
+<li><code>npm run dev</code></li>
+</ul>
+</li>
+<li><p>生產模式</p>
+<ul>
+<li><code>npm run build</code> (使用 webpack 將資源打包，部屬用)</li>
+<li><code>npm run start</code> (以生產模式開啟 web 伺服器)</li>
+</ul>
+</li>
+<li><p>靜態應用</p>
+<ul>
+<li><code>npm run generate</code></li>
+</ul>
+</li>
+</ul>
+<p>執行 <code>npm run dev</code> 後，打開預設的 3000 port，就可以看到:</p>
+<p><img src="https://i.imgur.com/bViDPRd.png" alt=""></p>
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><p>在 Nuxt 中，必須注意引入的套件或撰寫時是否使用到瀏覽器的 API，例如 <code>alert()</code>，因為 Nuxt 底層的 Node 是不能使用瀏覽器語法的。例如我在 pages/index.vue 中加入一個 created 生命週期並寫 <code>alert()</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Logo <span class="keyword">from</span> <span class="string">'~/components/Logo.vue'</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    Logo</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line"><span class="actionscript">    alert(<span class="string">'It would be error Q_Q'</span>)</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>出錯了 :( </p>
+<p><img src="https://i.imgur.com/e2PcyX3.png" alt=""></p>
+<p><strong>撰寫 Nuxt 時，要考慮到這是 Node.js 執行環境</strong>，Node 是不支援瀏覽器 window 屬性的。</p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/installation" target="_blank" rel="noopener">Nuxt 安裝</a></p>
 
     </div>
 
@@ -274,12 +274,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/25/%E9%97%9C%E6%96%BC%E9%80%99%E5%80%8B-Hexo-blog/" rel="prev" title="關於這個 Hexo blog">
-      <i class="fa fa-chevron-left"></i> 關於這個 Hexo blog
+    <a href="/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/" rel="prev" title="[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?">
+      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" rel="next" title="[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項">
-      [NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-2-Scss-%E5%AE%89%E8%A3%9D%E8%88%87%E5%BC%95%E7%94%A8/" rel="next" title="[NuxtJS] Nuxt 教學(2) - Scss 安裝與路徑的引用">
+      [NuxtJS] Nuxt 教學(2) - Scss 安裝與路徑的引用 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -340,7 +340,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nuxt-是什麼"><span class="nav-number">2.</span> <span class="nav-text">Nuxt 是什麼?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伺服器端渲染"><span class="nav-number">2.1.</span> <span class="nav-text">伺服器端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速建立路由"><span class="nav-number">2.2.</span> <span class="nav-text">快速建立路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方便的-nuxt-config-js-管理"><span class="nav-number">2.3.</span> <span class="nav-text">方便的 nuxt.config.js 管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">3.</span> <span class="nav-text">參考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起手式"><span class="nav-number">1.</span> <span class="nav-text">起手式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#專案設定"><span class="nav-number">2.</span> <span class="nav-text">專案設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開啟-Nuxt-專案"><span class="nav-number">3.</span> <span class="nav-text">開啟 Nuxt 專案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事項"><span class="nav-number">4.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">5.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -175,7 +175,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(6) - Nuxt 中的 component 定義與使用</a>
+            <a href="/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用</a>
         </h2>
 
         <div class="post-meta">
@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-11 16:47:38 / 修改時間：17:36:16" itemprop="dateCreated datePublished" datetime="2020-04-11T16:47:38+08:00">2020-04-11</time>
+              <time title="創建時間：2020-04-11 16:47:38 / 修改時間：17:42:20" itemprop="dateCreated datePublished" datetime="2020-04-11T16:47:38+08:00">2020-04-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,15 +210,14 @@
 
       
           <h2 id="component-定義"><a href="#component-定義" class="headerlink" title="component 定義"></a>component 定義</h2><p>在 Vue 中，廣義來說，.vue 就可視為一個 component，所以若使用 Vue-cli 開發，為了能更加清楚化專案結構，我們通常會將 .vue 區分成 components 與 views，意即某些 .vue 我們視為元件，某些視為頁面。</p>
-<p>而在 Nuxt 中的 .vue 的定義會更加分明，components 中的屬於元件，pages 中的屬於頁面。最大的不同是，pages 中的 .vue 可以設定 <code>layout</code>、<code>head</code> 或是使用 <code>asyncData</code> 方法等，但在 components 的 .vue 是無法使用的。</p>
-<p>例如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- components/Navbar.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    我是 navbar component</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 錯誤，無法使用</span></span></span><br><span class="line"><span class="actionscript">    layout: <span class="string">"demo"</span>,</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="string">"Hello ! It doesn't work Q_Q"</span>,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 當然這也不能用</span></span></span><br><span class="line">    head() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="keyword">this</span>.title,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>建立與使用一個 component 是相當簡單的 !，我們可以在 components 中，新增一個 Navbar.vue (注意命名，通常會使用大寫加以清楚辨識)，接著只需要在其他 .vue 中引入即可，例如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pages/index.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Navbar</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 建議都使用大寫，但小寫不會出錯 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logo</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// Nuxt 預設引入的 Logo 組件</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 可以使用 ES6 的 import 將 component 引入</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Logo <span class="keyword">from</span> <span class="string">"~/components/Logo.vue"</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    components: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 使用 ES6 物件解構進行組件註冊</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 實際上是: Logo: Logo，但可以簡寫</span></span></span><br><span class="line">      Logo,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 另一種是 webpack 的 import</span></span></span><br><span class="line"><span class="javascript">      Navbar: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">"@/components/Navbar"</span>),</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>其他的組件使用如 <a href="https://cn.vuejs.org/v2/guide/components-props.html#ad" target="_blank" rel="noopener">props</a>、<a href="https://cn.vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">$emit</a> 或 <a href="https://cn.vuejs.org/v2/guide/components-slots.html" target="_blank" rel="noopener">slot</a> 等，因為與原本 Vue.js 相同，在此不多敘述，可直接參考官方文件。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -549,7 +548,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -563,7 +562,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項</a>
+            <a href="/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項</a>
         </h2>
 
         <div class="post-meta">
@@ -572,10 +571,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-04-08 10:58:43 / 修改時間：12:28:03" itemprop="dateCreated datePublished" datetime="2020-04-08T10:58:43+08:00">2020-04-08</time>
+              <time title="創建時間：2020-04-08 10:58:43" itemprop="dateCreated datePublished" datetime="2020-04-08T10:58:43+08:00">2020-04-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-11 17:43:58" itemprop="dateModified" datetime="2020-04-11T17:43:58+08:00">2020-04-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -600,7 +605,7 @@
           <p>建立你的 Nuxt 專案吧~!</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/08/%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
+              <a class="btn" href="/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -624,7 +629,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -638,7 +643,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?</a>
+            <a href="/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/" class="post-title-link" itemprop="url">[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?</a>
         </h2>
 
         <div class="post-meta">
@@ -655,7 +660,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-09 14:18:08" itemprop="dateModified" datetime="2020-04-09T14:18:08+08:00">2020-04-09</time>
+                <time title="修改時間：2020-04-11 17:43:27" itemprop="dateModified" datetime="2020-04-11T17:43:27+08:00">2020-04-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -681,7 +686,7 @@
           <p>這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/04/01/Nuxt-Nuxt-js-%E6%95%99%E5%AD%B8-0-%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8-Nuxt/">
+              <a class="btn" href="/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/">
                 閱讀全文 &raquo;
               </a>
             </div>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/</loc>
+    
+    <lastmod>2020-04-12T09:11:37.206Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/</loc>
     
     <lastmod>2020-04-12T09:04:45.737Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://0445814.github.io/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/</loc>
     
     <lastmod>2020-04-11T09:43:58.848Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/</loc>
-    
-    <lastmod>2020-04-11T09:43:27.233Z</lastmod>
     
   </url>
   

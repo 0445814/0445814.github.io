@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"0445814.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。 Vue 中安裝套件 使用 script 標籤引入 CDN 或 JS 檔案 使用 npm install 安裝一般 JS 套件，再 import 引入 Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.componen">
+  <meta name="description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[NuxtJS] Nuxt 教學(8) - Nuxt plugins 與 axios">
 <meta property="og:url" content="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/index.html">
 <meta property="og:site_name" content="Ken">
-<meta property="og:description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。 Vue 中安裝套件 使用 script 標籤引入 CDN 或 JS 檔案 使用 npm install 安裝一般 JS 套件，再 import 引入 Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.componen">
+<meta property="og:description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/bP4bcFx.png">
 <meta property="article:published_time" content="2020-04-12T09:54:15.000Z">
-<meta property="article:modified_time" content="2020-04-12T10:47:43.778Z">
+<meta property="article:modified_time" content="2020-04-12T10:53:07.492Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-12 17:54:15 / 修改時間：18:47:43" itemprop="dateCreated datePublished" datetime="2020-04-12T17:54:15+08:00">2020-04-12</time>
+              <time title="創建時間：2020-04-12 17:54:15 / 修改時間：18:53:07" itemprop="dateCreated datePublished" datetime="2020-04-12T17:54:15+08:00">2020-04-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,6 +214,8 @@
 
       
         <p>Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。</p>
+<a id="more"></a>
+
 <h2 id="Vue-中安裝套件"><a href="#Vue-中安裝套件" class="headerlink" title="Vue 中安裝套件"></a>Vue 中安裝套件</h2><ul>
 <li>使用 script 標籤引入 CDN 或 JS 檔案</li>
 <li>使用 npm install 安裝一般 JS 套件，再 import 引入</li>

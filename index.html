@@ -186,7 +186,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-12 17:54:15 / 修改時間：18:47:43" itemprop="dateCreated datePublished" datetime="2020-04-12T17:54:15+08:00">2020-04-12</time>
+              <time title="創建時間：2020-04-12 17:54:15 / 修改時間：18:53:07" itemprop="dateCreated datePublished" datetime="2020-04-12T17:54:15+08:00">2020-04-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,59 +210,14 @@
 
       
           <p>Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。</p>
-<h2 id="Vue-中安裝套件"><a href="#Vue-中安裝套件" class="headerlink" title="Vue 中安裝套件"></a>Vue 中安裝套件</h2><ul>
-<li>使用 script 標籤引入 CDN 或 JS 檔案</li>
-<li>使用 npm install 安裝一般 JS 套件，再 import 引入</li>
-<li>Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.component 註冊</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> BootstrapVue <span class="keyword">from</span> <span class="string">'bootstrap-vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(BootstrapVue)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Nuxt-中安裝套件"><a href="#Nuxt-中安裝套件" class="headerlink" title="Nuxt 中安裝套件"></a>Nuxt 中安裝套件</h2><ul>
-<li>nuxt.config.js 中以 CDN 方式引入 (較簡單)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">'universal'</span>,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * ... 略 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    script: [</span><br><span class="line">      <span class="comment">// 引入檔案</span></span><br><span class="line">      &#123; <span class="attr">src</span>: <span class="string">'/jquery-3.4.1.min.js'</span> &#125;,</span><br><span class="line">      <span class="comment">// 引入 CDN</span></span><br><span class="line">      &#123; <span class="attr">src</span>: <span class="string">'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用 nuxt plugins 安裝 (較麻煩)</li>
-</ul>
-<p>這裡以 <a href="https://www.npmjs.com/package/vuejs-datepicker" target="_blank" rel="noopener">vuejs-datepicker</a> 套件作為測試</p>
-<ol>
-<li><p>npm 下載套件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install vuejs-datepicker --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>plugins 中，新增 datePicker.js，並寫入</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Datepicker <span class="keyword">from</span> <span class="string">'vuejs-datepicker'</span></span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'Datepicker'</span>, Datepicker)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意: Vue.component 是全域安裝，所以組件都能使用</p>
-</blockquote>
-<ol start="3">
-<li>nuxt.config.js 中安裝 plugins</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    <span class="comment">// mode: client，只在 client 端執行，另一選項是 server</span></span><br><span class="line">    &#123; <span class="attr">src</span>: <span class="string">'~/plugins/datePicker.js'</span>, <span class="attr">mode</span>: <span class="string">'client'</span> &#125;,</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure>
-
-<p>這樣就能在 Nuxt 中使用了。</p>
-<p><strong>注意:</strong> 若按照以前 Vue 的安裝方式，可能會發生錯誤，例如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// pages/index.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 引入套件</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Datepicker <span class="keyword">from</span> <span class="string">'vuejs-datepicker'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  layout: <span class="string">'qq'</span>,</span></span><br><span class="line">  components: &#123;</span><br><span class="line"><span class="actionscript">    <span class="comment">// 進行註冊</span></span></span><br><span class="line">    Datepicker</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>這樣是會發生錯誤的 :(</p>
-<p><img src="https://i.imgur.com/bP4bcFx.png" alt=""></p>
-<p>寫 Nuxt 時，要時時刻刻考慮 Node 執行環境，所以 nuxt.config.js 的 plugins 中的 mode，可以讓套件只在 client 執行。</p>
-<ul>
-<li>使用 nuxt modules (套件較少)</li>
-</ul>
-<p>nuxt modules 將 plugins 再進行封裝成為 Nuxt 專屬套件</p>
-<p>這裡以 <a href="https://axios.nuxtjs.org/#features" target="_blank" rel="noopener">axios</a> 作為測試</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install @nuxtjs/axios</span><br></pre></td></tr></table></figure>
-
-<p>nuxt.config.js</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  modules: [</span><br><span class="line">    <span class="string">'@nuxtjs/axios'</span>,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這樣就安裝完了 !</p>
-<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/plugins/" target="_blank" rel="noopener">Nuxt plugins</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

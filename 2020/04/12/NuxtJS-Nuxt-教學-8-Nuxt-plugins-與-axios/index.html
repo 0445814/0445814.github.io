@@ -20,25 +20,22 @@
     var CONFIG = {"hostname":"0445814.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。">
+  <meta name="description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。 Vue 中安裝套件 使用 script 標籤引入 CDN 或 JS 檔案 使用 npm install 安裝一般 JS 套件，再 import 引入 Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.componen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?">
-<meta property="og:url" content="http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/index.html">
+<meta property="og:title" content="[NuxtJS] Nuxt 教學(8) - Nuxt plugins 與 axios">
+<meta property="og:url" content="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/index.html">
 <meta property="og:site_name" content="Ken">
-<meta property="og:description" content="這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。">
+<meta property="og:description" content="Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。 Vue 中安裝套件 使用 script 標籤引入 CDN 或 JS 檔案 使用 npm install 安裝一般 JS 套件，再 import 引入 Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.componen">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/sh1Nrjz.png">
-<meta property="og:image" content="https://i.imgur.com/LWH3mtl.png">
-<meta property="og:image" content="https://i.imgur.com/eAOi65c.png">
-<meta property="og:image" content="https://i.imgur.com/XiIG7LY.png">
-<meta property="article:published_time" content="2020-04-01T11:13:11.000Z">
-<meta property="article:modified_time" content="2020-04-12T09:11:37.206Z">
+<meta property="og:image" content="https://i.imgur.com/bP4bcFx.png">
+<meta property="article:published_time" content="2020-04-12T09:54:15.000Z">
+<meta property="article:modified_time" content="2020-04-12T10:47:43.778Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/sh1Nrjz.png">
+<meta name="twitter:image" content="https://i.imgur.com/bP4bcFx.png">
 
-<link rel="canonical" href="http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/">
+<link rel="canonical" href="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/">
 
 
 <script id="page-configurations">
@@ -50,7 +47,7 @@
   };
 </script>
 
-  <title>[NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ? | Ken</title>
+  <title>[NuxtJS] Nuxt 教學(8) - Nuxt plugins 與 axios | Ken</title>
   
 
 
@@ -169,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -182,7 +179,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          [NuxtJS] Nuxt 教學(0) - Nuxt 是什麼 ?
+          [NuxtJS] Nuxt 教學(8) - Nuxt plugins 與 axios
         </h2>
 
         <div class="post-meta">
@@ -191,16 +188,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-04-01 19:13:11" itemprop="dateCreated datePublished" datetime="2020-04-01T19:13:11+08:00">2020-04-01</time>
+              <time title="創建時間：2020-04-12 17:54:15 / 修改時間：18:47:43" itemprop="dateCreated datePublished" datetime="2020-04-12T17:54:15+08:00">2020-04-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-12 17:11:37" itemprop="dateModified" datetime="2020-04-12T17:11:37+08:00">2020-04-12</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -212,7 +203,6 @@
             </span>
 
           
-            <div class="post-description">這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。</div>
 
         </div>
       </header>
@@ -223,39 +213,59 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用 Vue Cli 4 完成<a href="https://0445814.github.io/V-Headphone/#/">電商作業</a>後，當然要繼續學習新東西了。</p>
-<p>開始學習 <a href="https://nuxtjs.org/" target="_blank" rel="noopener">Nuxt</a> 後，發現這個框架有許多特性非常好，以後學習重心應該會從 Vue Cli 轉向 Nuxt 了。</p>
-<p>總之，這個 Nuxt 系列文會記錄我學習的過程以及踩到的一些雷，希望也能幫助到其他學習者。</p>
-<h2 id="Nuxt-是什麼"><a href="#Nuxt-是什麼" class="headerlink" title="Nuxt 是什麼?"></a>Nuxt 是什麼?</h2><blockquote>
-<p>官方: Nuxt 是一個基於 Vue.js 的通用應用框架。<br>Nuxt 是一個高度封裝的 SSR 應用框架。</p>
-</blockquote>
-<p>所以，如果本身就是寫 Vue 的開發者來說，使用 Nuxt 開發，你仍然是寫 Vue，並沒有不同，只是 Nuxt 多了許多特色，</p>
-<p>雖然官網介紹已經將特色寫得很清楚，這裡只列出我認為與 Vue Cli 最明顯差別，例如:</p>
-<ul>
-<li>伺服器端渲染</li>
-<li>快速建立路由</li>
-<li>方便的 nuxt.config.js 管理</li>
+        <p>Nuxt 引入插件的方式與 Vue-cli 稍有不同，這也是初學 Nuxt 容易發生錯誤的地方，來看看如何在 Nuxt 安裝套件吧。</p>
+<h2 id="Vue-中安裝套件"><a href="#Vue-中安裝套件" class="headerlink" title="Vue 中安裝套件"></a>Vue 中安裝套件</h2><ul>
+<li>使用 script 標籤引入 CDN 或 JS 檔案</li>
+<li>使用 npm install 安裝一般 JS 套件，再 import 引入</li>
+<li>Vue-cli 中以 npm install 安裝 Vue 套件，再以 Vue.use 或 Vue.component 註冊</li>
 </ul>
-<h3 id="伺服器端渲染"><a href="#伺服器端渲染" class="headerlink" title="伺服器端渲染"></a>伺服器端渲染</h3><p>如果曾經使用過 Vue Cli 開發，就會發現如果對網站按右鍵 -&gt; 檢查網頁原始碼，只會看到一些基本標籤，沒辦法看到網站內容，</p>
-<p>例如查看一個 SPA 網站原始碼:</p>
-<p><img src="https://i.imgur.com/sh1Nrjz.png" alt="V-Headphone 電商原始碼"></p>
-<p>這是因為 SPA (Single page application) 單頁面應用程式是使用 JavaScript 進行前端渲染。一般來說通常是前端使用 AJAX 對伺服器發送請求，伺服器回應數據後，網頁的 JS 會根據數據渲染前端 UI 介面，所有東西都是 JS 動態產生的，所以打開原始碼會看不到內容。這會導致搜尋引擎爬蟲只會看到你的網頁內容是一片空白，對 SEO 相當不好。</p>
-<p>但如果是使用 Nuxt 時:</p>
-<p><img src="https://i.imgur.com/LWH3mtl.png" alt="Nuxt init"><br><img src="https://i.imgur.com/eAOi65c.png" alt="Nuxt.js 初始建立原始碼"></p>
-<p>Nuxt 在使用者一開始進入網頁時，會在後端先將頁面生好，再傳給瀏覽器給使用者，所以打開網頁原始碼是可以看見內容的，這就是 SSR (Server side render) 伺服器端渲染</p>
-<p>並且之後使用者在瀏覽網站時，例如跳轉路由，仍然是 SPA 體驗，意即 Nuxt 同時擁有了 SSR 渲染對 SEO 友善的好處，也保留了 SPA 良好的使用者體驗。</p>
-<p><del>感覺之後可以額外寫一篇關於 前端渲染、後端渲染與前後端分離的文章。</del></p>
-<h3 id="快速建立路由"><a href="#快速建立路由" class="headerlink" title="快速建立路由"></a>快速建立路由</h3><p>在 Vue Cli 建立路由時需要自己配置 routes，雖然稱不上麻煩，但 Nuxt 在路由方面做得更直觀，只需要在 pages 資料夾內建立路由名稱資料夾放置要渲染的 .vue 檔即可，例如新增一個 products 資料夾，裡面放入 index.vue</p>
-<p><img src="https://i.imgur.com/XiIG7LY.png" alt="Nuxt 路由"></p>
-<p>這樣簡單的建立資料夾，Nuxt 就會自動配置路由，是不是相當方便呢 !</p>
-<h3 id="方便的-nuxt-config-js-管理"><a href="#方便的-nuxt-config-js-管理" class="headerlink" title="方便的 nuxt.config.js 管理"></a>方便的 nuxt.config.js 管理</h3><p>目前新版腳手架的開發方向，是偏向不讓開發者去設定 webpack 的(React 與 Vue Cli 4 都將 webpack 藏起來惹)。</p>
-<p>而 Nuxt 許多設定都統一在 nuxt.config.js 作管理，例如 HTML 的 <head> 只需要在 meta 中配置即可，而 webpack 在 build 作設定，所有配置都在這一目了然，</p>
-<p>詳細待之後教學。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 部分 nuxt.config.js 程式碼</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">'universal'</span>,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    title: process.env.npm_package_name || <span class="string">''</span>,</span><br><span class="line">    meta: [</span><br><span class="line">      &#123; <span class="attr">charset</span>: <span class="string">'utf-8'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">'viewport'</span>, <span class="attr">content</span>: <span class="string">'width=device-width, initial-scale=1'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">hid</span>: <span class="string">'description'</span>, <span class="attr">name</span>: <span class="string">'description'</span>, <span class="attr">content</span>: process.env.npm_package_description || <span class="string">''</span> &#125;</span><br><span class="line">    ],</span><br><span class="line">    link: [</span><br><span class="line">      &#123; <span class="attr">rel</span>: <span class="string">'icon'</span>, <span class="attr">type</span>: <span class="string">'image/x-icon'</span>, <span class="attr">href</span>: <span class="string">'/favicon.ico'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   *  ... 還有許多設定 </span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line"></span><br><span class="line">    build: &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    ** You can extend webpack config here</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    extend (config, ctx) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> BootstrapVue <span class="keyword">from</span> <span class="string">'bootstrap-vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(BootstrapVue)</span><br></pre></td></tr></table></figure>
 
-<p>希望這篇可以幫助你快速了解 Nuxt 是什麼，為什麼要使用它，它跟 Vue Cli 之間有什麼差別，</p>
-<p>下一篇就會開始建立 Nuxt 專案，開始學習囉!</p>
-<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/" target="_blank" rel="noopener">NuxtJS</a><br><a href="https://hiskio.com/courses/342" target="_blank" rel="noopener">NUXT.js 前端開發實戰手冊</a><br><a href="https://www.udemy.com/course/nuxtjs-vuejs-on-steroids/" target="_blank" rel="noopener">Nuxt.js - Vue.js on Steroids</a></p>
+<h2 id="Nuxt-中安裝套件"><a href="#Nuxt-中安裝套件" class="headerlink" title="Nuxt 中安裝套件"></a>Nuxt 中安裝套件</h2><ul>
+<li>nuxt.config.js 中以 CDN 方式引入 (較簡單)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  mode: <span class="string">'universal'</span>,</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  ** Headers of the page</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  head: &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * ... 略 </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    script: [</span><br><span class="line">      <span class="comment">// 引入檔案</span></span><br><span class="line">      &#123; <span class="attr">src</span>: <span class="string">'/jquery-3.4.1.min.js'</span> &#125;,</span><br><span class="line">      <span class="comment">// 引入 CDN</span></span><br><span class="line">      &#123; <span class="attr">src</span>: <span class="string">'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.js'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 nuxt plugins 安裝 (較麻煩)</li>
+</ul>
+<p>這裡以 <a href="https://www.npmjs.com/package/vuejs-datepicker" target="_blank" rel="noopener">vuejs-datepicker</a> 套件作為測試</p>
+<ol>
+<li><p>npm 下載套件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install vuejs-datepicker --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>plugins 中，新增 datePicker.js，並寫入</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Datepicker <span class="keyword">from</span> <span class="string">'vuejs-datepicker'</span></span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'Datepicker'</span>, Datepicker)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: Vue.component 是全域安裝，所以組件都能使用</p>
+</blockquote>
+<ol start="3">
+<li>nuxt.config.js 中安裝 plugins</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    <span class="comment">// mode: client，只在 client 端執行，另一選項是 server</span></span><br><span class="line">    &#123; <span class="attr">src</span>: <span class="string">'~/plugins/datePicker.js'</span>, <span class="attr">mode</span>: <span class="string">'client'</span> &#125;,</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure>
+
+<p>這樣就能在 Nuxt 中使用了。</p>
+<p><strong>注意:</strong> 若按照以前 Vue 的安裝方式，可能會發生錯誤，例如:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">// pages/index.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 引入套件</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Datepicker <span class="keyword">from</span> <span class="string">'vuejs-datepicker'</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  layout: <span class="string">'qq'</span>,</span></span><br><span class="line">  components: &#123;</span><br><span class="line"><span class="actionscript">    <span class="comment">// 進行註冊</span></span></span><br><span class="line">    Datepicker</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>這樣是會發生錯誤的 :(</p>
+<p><img src="https://i.imgur.com/bP4bcFx.png" alt=""></p>
+<p>寫 Nuxt 時，要時時刻刻考慮 Node 執行環境，所以 nuxt.config.js 的 plugins 中的 mode，可以讓套件只在 client 執行。</p>
+<ul>
+<li>使用 nuxt modules (套件較少)</li>
+</ul>
+<p>nuxt modules 將 plugins 再進行封裝成為 Nuxt 專屬套件</p>
+<p>這裡以 <a href="https://axios.nuxtjs.org/#features" target="_blank" rel="noopener">axios</a> 作為測試</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install @nuxtjs/axios</span><br></pre></td></tr></table></figure>
+
+<p>nuxt.config.js</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  modules: [</span><br><span class="line">    <span class="string">'@nuxtjs/axios'</span>,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就安裝完了 !</p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/plugins/" target="_blank" rel="noopener">Nuxt plugins</a></p>
 
     </div>
 
@@ -274,13 +284,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/25/%E9%97%9C%E6%96%BC%E9%80%99%E5%80%8B-Hexo-blog/" rel="prev" title="關於這個 Hexo blog">
-      <i class="fa fa-chevron-left"></i> 關於這個 Hexo blog
+    <a href="/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/" rel="prev" title="[NuxtJS] Nuxt 教學(7) - nuxt-router">
+      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(7) - nuxt-router
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/08/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-1-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E5%B0%88%E6%A1%88%E8%88%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" rel="next" title="[NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項">
-      [NuxtJS] Nuxt 教學(1) - 建立一個專案與注意事項 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -340,7 +347,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nuxt-是什麼"><span class="nav-number">2.</span> <span class="nav-text">Nuxt 是什麼?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伺服器端渲染"><span class="nav-number">2.1.</span> <span class="nav-text">伺服器端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速建立路由"><span class="nav-number">2.2.</span> <span class="nav-text">快速建立路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方便的-nuxt-config-js-管理"><span class="nav-number">2.3.</span> <span class="nav-text">方便的 nuxt.config.js 管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">3.</span> <span class="nav-text">參考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-中安裝套件"><span class="nav-number">1.</span> <span class="nav-text">Vue 中安裝套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nuxt-中安裝套件"><span class="nav-number">2.</span> <span class="nav-text">Nuxt 中安裝套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">3.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

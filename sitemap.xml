@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/</loc>
+    <loc>http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-8-Nuxt-plugins-%E8%88%87-axios/</loc>
     
-    <lastmod>2020-04-12T09:11:37.206Z</lastmod>
+    <lastmod>2020-04-12T10:47:43.778Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/</loc>
     
-    <lastmod>2020-04-12T09:04:45.737Z</lastmod>
+    <lastmod>2020-04-12T09:12:41.216Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://0445814.github.io/2020/04/01/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-0-Nuxt%20%E6%98%AF%E4%BB%80%E9%BA%BC/</loc>
+    
+    <lastmod>2020-04-12T09:11:37.206Z</lastmod>
     
   </url>
   

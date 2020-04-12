@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"0445814.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="component 定義在 Vue 中，廣義來說，.vue 就可視為一個 component，所以若使用 Vue-cli 開發，為了能更加清楚化專案結構，我們通常會將 .vue 區分成 components 與 views，意即某些 .vue 我們視為元件，某些視為頁面。">
+  <meta name="description" content="終於來到，nuxt-router 了，router 的配置也是我認為 Nuxt 相當強大的地方，只需簡單步驟就可建立路由">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用">
-<meta property="og:url" content="http://0445814.github.io/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/index.html">
+<meta property="og:title" content="[NuxtJS] Nuxt 教學(7) - nuxt-router">
+<meta property="og:url" content="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/index.html">
 <meta property="og:site_name" content="Ken">
-<meta property="og:description" content="component 定義在 Vue 中，廣義來說，.vue 就可視為一個 component，所以若使用 Vue-cli 開發，為了能更加清楚化專案結構，我們通常會將 .vue 區分成 components 與 views，意即某些 .vue 我們視為元件，某些視為頁面。">
+<meta property="og:description" content="終於來到，nuxt-router 了，router 的配置也是我認為 Nuxt 相當強大的地方，只需簡單步驟就可建立路由">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-04-11T08:47:38.000Z">
-<meta property="article:modified_time" content="2020-04-11T09:42:20.495Z">
+<meta property="article:published_time" content="2020-04-12T07:43:58.000Z">
+<meta property="article:modified_time" content="2020-04-12T08:53:18.420Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://0445814.github.io/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/">
+<link rel="canonical" href="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>[NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用 | Ken</title>
+  <title>[NuxtJS] Nuxt 教學(7) - nuxt-router | Ken</title>
   
 
 
@@ -164,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/">
+    <link itemprop="mainEntityOfPage" href="http://0445814.github.io/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -177,7 +177,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          [NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用
+          [NuxtJS] Nuxt 教學(7) - nuxt-router
         </h2>
 
         <div class="post-meta">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-11 16:47:38 / 修改時間：17:42:20" itemprop="dateCreated datePublished" datetime="2020-04-11T16:47:38+08:00">2020-04-11</time>
+              <time title="創建時間：2020-04-12 15:43:58 / 修改時間：16:53:18" itemprop="dateCreated datePublished" datetime="2020-04-12T15:43:58+08:00">2020-04-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -211,16 +211,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="component-定義"><a href="#component-定義" class="headerlink" title="component 定義"></a>component 定義</h2><p>在 Vue 中，廣義來說，.vue 就可視為一個 component，所以若使用 Vue-cli 開發，為了能更加清楚化專案結構，我們通常會將 .vue 區分成 components 與 views，意即某些 .vue 我們視為元件，某些視為頁面。</p>
+        <p>終於來到，nuxt-router 了，router 的配置也是我認為 Nuxt 相當強大的地方，只需簡單步驟就可建立路由</p>
 <a id="more"></a>
-<p>而在 Nuxt 中的 .vue 的定義會更加分明，components 中的屬於元件，pages 中的屬於頁面。最大的不同是 pages 中的 .vue 可以設定 <code>layout</code>、<code>head</code> 或是使用 <code>asyncData</code> 方法等，但在 components 的 .vue 是無法使用的。</p>
-<p>例如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- components/Navbar.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    我是 navbar component</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 錯誤，無法使用</span></span></span><br><span class="line"><span class="actionscript">    layout: <span class="string">"demo"</span>,</span></span><br><span class="line">    data() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="string">"Hello ! It doesn't work Q_Q"</span>,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 當然這也不能用</span></span></span><br><span class="line">    head() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        title: <span class="keyword">this</span>.title,</span></span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>建立與使用一個 component 是相當簡單的 !，我們可以在 components 中，新增一個 Navbar.vue (注意命名，通常會使用大寫加以清楚辨識)，接著只需要在其他 .vue 中引入即可，例如:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- pages/index.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Navbar</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 建議都使用大寫，但小寫不會出錯 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logo</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="comment">// Nuxt 預設引入的 Logo 組件</span></span></span><br><span class="line"><span class="actionscript">  <span class="comment">// 可以使用 ES6 的 import 將 component 引入</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> Logo <span class="keyword">from</span> <span class="string">"~/components/Logo.vue"</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">    components: &#123;</span><br><span class="line"><span class="actionscript">      <span class="comment">// 使用 ES6 物件解構進行組件註冊</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 實際上是: Logo: Logo，但可以簡寫</span></span></span><br><span class="line">      Logo,</span><br><span class="line"><span class="actionscript">      <span class="comment">// 另一種是 webpack 的 import</span></span></span><br><span class="line"><span class="javascript">      Navbar: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">"@/components/Navbar"</span>),</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="建立路由"><a href="#建立路由" class="headerlink" title="建立路由"></a>建立路由</h2><p>Nuxt 會監聽 pages 的目錄結構變動來自動配置路由，例如在 pages 新增 user 目錄並新增 index.vue 與 login.vue</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 目錄結構</span></span><br><span class="line">pages/</span><br><span class="line">--| user/</span><br><span class="line">-----| index.vue</span><br><span class="line">-----| login.vue</span><br><span class="line"><span class="meta">#</span><span class="bash"> pages 的 index.vue 默認首頁 /</span></span><br><span class="line">--| index.vue</span><br></pre></td></tr></table></figure>
 
-<p>其他的組件使用如 <a href="https://cn.vuejs.org/v2/guide/components-props.html#ad" target="_blank" rel="noopener">props</a>、<a href="https://cn.vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">$emit</a> 或 <a href="https://cn.vuejs.org/v2/guide/components-slots.html" target="_blank" rel="noopener">slot</a> 等，因為與原本 Vue.js 相同，在此不多敘述，可直接參考官方文件。</p>
+<p>Nuxt router 將會自動生成路由，可以在 .nuxt/router.js 中找到</p>
+<blockquote>
+<p>注意: name 的命名是由 Nuxt 規定的</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">  path: <span class="string">"/user"</span>,</span><br><span class="line">  component: _5adf272d,</span><br><span class="line">  name: <span class="string">"user"</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: <span class="string">"/user/login"</span>,</span><br><span class="line">  component: _2486ca44,</span><br><span class="line">  name: <span class="string">"user-login"</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: <span class="string">"/"</span>,</span><br><span class="line">  component: _2a3e9450,</span><br><span class="line">  name: <span class="string">"index"</span></span><br><span class="line">&#125;],</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>目錄名稱下的 index.vue 將默認是該路由的頁面。</p>
+</blockquote>
+<h2 id="動態路由"><a href="#動態路由" class="headerlink" title="動態路由"></a>動態路由</h2><p>在 Nuxt 中只需要使用下底線 _ 作為路由名稱前綴，就能建立動態路由</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pages/</span><br><span class="line">--| products/</span><br><span class="line">-----| _id.vue</span><br><span class="line">--| index.vue</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [</span><br><span class="line">  &#123;</span><br><span class="line">  path: <span class="string">"/products/:id?"</span>,</span><br><span class="line">  component: _6f30805c,</span><br><span class="line">  name: <span class="string">"products-id"</span></span><br><span class="line">  &#125;],</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>:id?</code> 後面的問號表示路由是可選的，想將它設置為必選的路由，需要在 products 目錄內建立一個 index.vue 即可。</p>
+</blockquote>
+<h2 id="路由參數驗證"><a href="#路由參數驗證" class="headerlink" title="路由參數驗證"></a>路由參數驗證</h2><p>Nuxt 可以讓你在動態路由組件中定義參數驗證方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pages/users/_id.vue</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  validate (&#123; params &#125;) &#123;</span><br><span class="line">    <span class="comment">// 必須是 number 類型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="regexp">/^\d+$/</span>.test(params.id)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果驗證方法返回的值不為 true 或 Promise 中 resolve 解析為 false 或拋出 Error ， Nuxt 將自動加載顯示 404 錯誤頁面或 500 錯誤頁面。</p>
+<p><a href="https://zh.nuxtjs.org/api/pages-validate/" target="_blank" rel="noopener">更多驗證方法</a></p>
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>建立內嵌子路由，只需新增一個 Vue 文件，同時添加一個<strong>與該文件同名</strong>的目錄用來存放子視圖組件。</p>
+<blockquote>
+<p>注意，父組件中記得使用 <code>&lt;nuxt-child&gt;</code> 來顯示子組件</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pages/</span><br><span class="line">--| user/</span><br><span class="line">-----| index.vue</span><br><span class="line">-----| _id.vue</span><br><span class="line">--| user.vue</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">  path: <span class="string">"/user"</span>,</span><br><span class="line">  component: _70bbf096,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    path: <span class="string">""</span>,</span><br><span class="line">    component: _5adf272d,</span><br><span class="line">    name: <span class="string">"user"</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">"login"</span>,</span><br><span class="line">    component: _2486ca44,</span><br><span class="line">    name: <span class="string">"user-login"</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">":id"</span>,</span><br><span class="line">    component: _6c7710d5,</span><br><span class="line">    name: <span class="string">"user-id"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="跳轉路由"><a href="#跳轉路由" class="headerlink" title="跳轉路由"></a>跳轉路由</h2><p>這與 Vue 的 <code>router-link</code> 相同，Nuxt 中使用 <code>nuxt-link</code>，即可跳轉路由</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 一般使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>users<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 以 name 來跳轉 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name: 'user-login'&#125;"</span>&gt;</span>login page<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 帶參數 --&gt;</span><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123; name: 'user-id', params: &#123; id: 123 &#125; &#125;"</span>&gt;</span>123 會員<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>router-link</code> 與 <code>nuxt-link</code> 差別，在<a href="https://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-5-nuxt-link-%E7%9A%84%E4%BD%BF%E7%94%A8/">這篇</a>講過。</p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/routing" target="_blank" rel="noopener">Nuxt router</a></p>
 
     </div>
 
@@ -239,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-5-nuxt-link-%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="[NuxtJS] Nuxt 教學(5) - nuxt-link 的使用">
-      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(5) - nuxt-link 的使用
+    <a href="/2020/04/11/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-6-Nuxt-%E4%B8%AD%E7%9A%84-component/" rel="prev" title="[NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用">
+      <i class="fa fa-chevron-left"></i> [NuxtJS] Nuxt 教學(6) - Nuxt 的 component 定義與使用
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/12/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-7-nuxt-router/" rel="next" title="[NuxtJS] Nuxt 教學(7) - nuxt-router">
-      [NuxtJS] Nuxt 教學(7) - nuxt-router <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -305,7 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#component-定義"><span class="nav-number">1.</span> <span class="nav-text">component 定義</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立路由"><span class="nav-number">1.</span> <span class="nav-text">建立路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#動態路由"><span class="nav-number">2.</span> <span class="nav-text">動態路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由參數驗證"><span class="nav-number">3.</span> <span class="nav-text">路由參數驗證</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套路由"><span class="nav-number">4.</span> <span class="nav-text">嵌套路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跳轉路由"><span class="nav-number">5.</span> <span class="nav-text">跳轉路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考"><span class="nav-number">6.</span> <span class="nav-text">參考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

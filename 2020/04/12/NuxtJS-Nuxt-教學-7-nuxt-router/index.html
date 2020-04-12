@@ -28,7 +28,7 @@
 <meta property="og:description" content="終於來到，nuxt-router 了，router 的配置也是我認為 Nuxt 相當強大的地方，只需簡單步驟就可建立路由">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-04-12T07:43:58.000Z">
-<meta property="article:modified_time" content="2020-04-12T09:04:10.794Z">
+<meta property="article:modified_time" content="2020-04-12T09:04:45.737Z">
 <meta property="article:author" content="Ken Chang">
 <meta property="article:tag" content="NuxtJS">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-04-12 15:43:58 / 修改時間：17:04:10" itemprop="dateCreated datePublished" datetime="2020-04-12T15:43:58+08:00">2020-04-12</time>
+              <time title="創建時間：2020-04-12 15:43:58 / 修改時間：17:04:45" itemprop="dateCreated datePublished" datetime="2020-04-12T15:43:58+08:00">2020-04-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,7 +247,7 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">  path: <span class="string">"/user"</span>,</span><br><span class="line">  component: _70bbf096,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    path: <span class="string">""</span>,</span><br><span class="line">    component: _5adf272d,</span><br><span class="line">    name: <span class="string">"user"</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">"login"</span>,</span><br><span class="line">    component: _2486ca44,</span><br><span class="line">    name: <span class="string">"user-login"</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    path: <span class="string">":id"</span>,</span><br><span class="line">    component: _6c7710d5,</span><br><span class="line">    name: <span class="string">"user-id"</span></span><br><span class="line">  &#125;]</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
 
 <h2 id="跳轉路由"><a href="#跳轉路由" class="headerlink" title="跳轉路由"></a>跳轉路由</h2><p>這與 Vue 的 <code>router-link</code> 相同，Nuxt 中使用 <code>nuxt-link</code>，即可跳轉路由</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 一般使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>users<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 以 name 來跳轉 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name: 'user-login'&#125;"</span>&gt;</span>login page<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 帶參數 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123; name: 'user-id', params: &#123; id: 123 &#125; &#125;"</span>&gt;</span>123 會員<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 一般使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">to</span>=<span class="string">"/user"</span>&gt;</span>users<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 以 name 來跳轉 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name: 'user-login'&#125;"</span>&gt;</span>login page<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 跳轉動態路由 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">nuxt-link</span> <span class="attr">:to</span>=<span class="string">"&#123; name: 'user-id', params: &#123; id: 123 &#125; &#125;"</span>&gt;</span>123 會員<span class="tag">&lt;/<span class="name">nuxt-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><code>router-link</code> 與 <code>nuxt-link</code> 差別，在<a href="https://0445814.github.io/2020/04/10/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-5-nuxt-link-%E7%9A%84%E4%BD%BF%E7%94%A8/">這篇</a>講過。</p>
 <h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><p><a href="https://zh.nuxtjs.org/guide/routing" target="_blank" rel="noopener">Nuxt router</a></p>

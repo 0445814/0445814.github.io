@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://0445814.github.io/2020/04/15/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-11-Nuxt-%E7%94%9F%E5%91%BD%E9%80%B1%E6%9C%9F/</loc>
+    
+    <lastmod>2020-04-15T02:42:01.212Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://0445814.github.io/2020/04/14/NuxtJS-Nuxt-%E6%95%99%E5%AD%B8-10-asyncData%20%E8%88%87%E5%BB%BA%E7%AB%8B%E7%B0%A1%E5%96%AE%20API/</loc>
     
     <lastmod>2020-04-14T09:40:10.890Z</lastmod>
